@@ -6,46 +6,46 @@
 
       <div>
         <H3>Full Name <strong>*</strong></H3>
-        <input type="text" id="FN" class="thin" #FN>
+        <input type="text" id="FN" class="thin" #FN [formControl]="fnControll">
         <label for="FN">First name</label>
       </div >
       <div>
-        <input type="text" id="LN" class="thin" #LN>
+        <input type="text" id="LN" class="thin" #LN [formControl]="lnControll">
         <label for="LN">Last name</label>
       </div>
     </div>
     <div class="wrapper two">
       <div class="widerer">
         <H3>Address <strong>*</strong></H3>
-        <input type="text" id="SA" class="wide" #SA>
+        <input type="text" id="SA" class="wide" #SA [formControl]="saControll">
         <label for="SA">Street Address</label>
       </div>
       <div class="widerer">
-        <input type="text" id="SA2" class="wide" #SA2>
+        <input type="text" id="SA2" class="wide" #SA2 [formControl]="sa2Controll">
         <label for="SA2">Street Address Line 2</label>
       </div>
       <div>
-        <input type="text" id="C" class="thin" #C>
+        <input type="text" id="C" class="thin" #C [formControl]="cControll">
         <label for="C">City</label>
       </div>
       <div>
-        <input type="text" id="SP" class="thin" #SP>
+        <input type="text" id="SP" class="thin" #SP [formControl]="spControll">
         <label for="SP">State/Province</label>
       </div>
       <div class="widerer">
-        <input type="text" id="PZ" class="wide" #PZ>
+        <input type="text" id="PZ" class="wide" #PZ [formControl]="pzControll">
         <label for="PZ">Postal/Zip Code</label>
       </div>
     </div>
     <div class="wrapper three">
       <div class="box">
         <H3>Phone Number <strong>*</strong></H3>
-        <input type="text" id="P" class="thin" #P placeholder="(000)000-0000">
+        <input type="text" id="P" class="thin" #P placeholder="(000)000-0000" [formControl]="pControll">
       </div>
 
       <div class="box">
         <H3>E-mail</H3>
-        <input type="text" id="E" class="thin" #E placeholder="ex:email@yahoo.com">
+        <input type="text" id="E" class="thin" #E placeholder="ex:email@yahoo.com" [formControl]="eControll">
         <label for="E" class="email">example@example.com</label>
       </div>
 
