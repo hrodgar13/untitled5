@@ -1,57 +1,57 @@
 <div class="block1" xmlns="http://www.w3.org/1999/html">
   <img src="https://www.red-carlos.com/img/Logo.png" alt="">
-  <form (submit)="addUser(FN.value,LN.value,SA.value,SA2.value,C.value,SP.value,PZ.value,P.value,E.value)">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
     <div class="wrapper one">
 
       <div>
         <H3>Full Name <strong>*</strong></H3>
-        <input type="text" id="FN" class="thin" #FN [formControl]="fnControll">
+        <input type="text" id="FN" class="thin" #FN formControlName="fnControll">
         <label for="FN">First name</label>
       </div >
       <div>
-        <input type="text" id="LN" class="thin" #LN [formControl]="lnControll">
+        <input type="text" id="LN" class="thin" #LN formControlName="lnControll">
         <label for="LN">Last name</label>
       </div>
     </div>
-    <div class="wrapper two">
+    <div class="wrapper two" formGroupName="address">
       <div class="widerer">
         <H3>Address <strong>*</strong></H3>
-        <input type="text" id="SA" class="wide" #SA [formControl]="saControll">
+        <input type="text" id="SA" class="wide" #SA formControlName="saControll">
         <label for="SA">Street Address</label>
       </div>
       <div class="widerer">
-        <input type="text" id="SA2" class="wide" #SA2 [formControl]="sa2Controll">
+        <input type="text" id="SA2" class="wide" #SA2 formControlName="sa2Controll">
         <label for="SA2">Street Address Line 2</label>
       </div>
       <div>
-        <input type="text" id="C" class="thin" #C [formControl]="cControll">
+        <input type="text" id="C" class="thin" #C formControlName="cControll">
         <label for="C">City</label>
       </div>
       <div>
-        <input type="text" id="SP" class="thin" #SP [formControl]="spControll">
+        <input type="text" id="SP" class="thin" #SP formControlName="spControll">
         <label for="SP">State/Province</label>
       </div>
       <div class="widerer">
-        <input type="text" id="PZ" class="wide" #PZ [formControl]="pzControll">
+        <input type="text" id="PZ" class="wide" #PZ formControlName="pzControll">
         <label for="PZ">Postal/Zip Code</label>
       </div>
     </div>
-    <div class="wrapper three">
+    <div class="wrapper three" formGroupName="contacts">
       <div class="box">
         <H3>Phone Number <strong>*</strong></H3>
-        <input type="text" id="P" class="thin" #P placeholder="(000)000-0000" [formControl]="pControll">
+        <input type="text" id="P" class="thin" #P placeholder="(000)000-0000" formControlName="pControll">
       </div>
 
       <div class="box">
         <H3>E-mail</H3>
-        <input type="text" id="E" class="thin" #E placeholder="ex:email@yahoo.com" [formControl]="eControll">
+        <input type="text" id="E" class="thin" #E placeholder="ex:email@yahoo.com" formControlName="eControll">
         <label for="E" class="email">example@example.com</label>
       </div>
 
     </div>
     <hr>
-    <button type="submit" class="btn btn-outline-success">Submit</button>
+    <button type="submit" class="btn btn-outline-success" [disabled]="!profileForm.valid">Submit</button>
   </form>
   <div class="OUTER">
 
